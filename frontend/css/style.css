@@ -1,0 +1,246 @@
+/*global*/
+/*чтобы все блоки располагались как задумано
+надо, чтобы рамки и отступы,
+которые мы добавляем не учитывались (все паддинги,
+будут браться за счет самого элемента и он не будет
+расти*/
+html {
+    box-sizing: border-box;
+  }
+
+  /*наследование; все элементы и псевдоэлементы
+  - такие же, как и уих родителей*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  /*возвращаем стандартный цвет ссылок
+  и убираем нижнее подчеркивание*/
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /*всем картинкам сразу задаем  ширину 100%,
+   чтобы не было полосы прокрутки, для того, чтобы не выходили
+   за границы контейнера */
+  img {
+    max-width: 100%;
+  }
+
+  /*кнопки*/
+  button {
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+
+  /*выставляем шрифт*/
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: local('OpenSansRegular'),
+      url('../fonts/OpenSansRegular.woff2') format('woff2'),
+      url('../fonts/OpenSansRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('OpenSansSemiBold'),
+      url('../fonts/OpenSansSemiBold.woff2') format('woff2'),
+      url('../fonts/OpenSansSemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('OpenSansBold'),
+      url('../fonts/OpenSansBold.woff2') format('woff2'),
+      url('../fonts/OpenSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F5F5F5;
+  }
+
+  .container {
+    max-width: 1024px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  /*убираем отступы и маркеры у списков*/
+  .list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+/*header*/
+.header {
+  box-shadow: 0px 5px 10px 0px rgba(176, 190, 197, 0.32);
+  background-color: #FFFFFF;
+}
+
+.header__container {
+  align-items: center;
+  padding: 23px 0;
+}
+
+.header__logo {
+    margin-right: 53px;
+}
+
+.header-logo__320 {
+    display: none;
+}
+
+.header__input {
+    padding: 13px 0 13px 16px;
+    border: 0;
+    border: 1px solid #B0B0B0;
+    width: 581px;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.07px;
+    color: #B0B0B0;
+
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 100%; 
+} 
+
+.modal__window {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 225px);
+  padding: 24px 0 29px;
+  width: 450px;
+  height: 400px;
+  background-color: #fff;
+}
+
+.modal__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 29px;
+  height: 29px;
+  cursor: pointer;
+  background: url(../img/button__close.svg) no-repeat;
+}
+
+.modal__content {
+  position: relative;
+}
+
+/*Модальное окно - форма*/
+.form-client {
+  padding: 0 30px 0;
+}
+
+.form-client__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.51px;
+  color: #333;
+}
+
+.main__container {
+  padding: 40px 0 102px;
+}
+
+
+.main__title  {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.68px;
+  color: rgba(51, 51, 51, 1);
+}
+
+.table {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.table__th {
+  text-align: left;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.34px;
+  color: rgba(176, 176, 176, 1);
+}
+
+.table__th p {
+  margin: 0;
+}
+
+.table__id {
+  color: rgba(152, 115, 255, 1);
+}
+
+.table__body {
+  height: 300px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+tr {
+  height: 60px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.btn {
+  margin: 0 auto;
+  align-items: center;
+  padding: 12.5px 26.5px;
+  border: 1px solid rgba(152, 115, 255, 1);
+}
+
+.button__img {
+  margin-right: 14px;
+}
+
+.button__text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.07px;
+  color: rgba(152, 115, 255, 1);
+}
+
+
+
